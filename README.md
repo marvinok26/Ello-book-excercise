@@ -1,87 +1,66 @@
- ![svgviewer-output](https://github.com/ElloTechnology/backend_takehome/assets/3518127/561bc8d4-bffc-4360-b9ea-61e876bcec93)
+#                                              Ello Book Assignment
+# Table of Contents
 
+-Project Description
+-Setup
+-Step 1: Setup the Project
+-Step 2: GraphQL Setup
+-Step 3: Component Structure
+-Usage
 
-# Ello Fullstack Engineering Challenge
+# Project Description
+Ello Book Assignment is a web application built with React and GraphQL. It allows users, especially teachers to browse a collection of books, add them to their reading list, and view their reading list.
 
-👋 Hello,
-We are really excited about you potentially joining the team, so we designed this take home exercise to give you a taste of the challenges you may encounter in the role, and better understand what it would be like to work closely together.
+# Setup
+## Step 1: Setup the Project
+Initialize the React project:
+bash
+code
+npx create-react-app frontend
+cd frontend
+npm install @apollo/client graphql @mui/material @emotion/react @emotion/styled
 
-Thanks for taking the time, and we hope to talk with you soon!
+## Set up file structure:
+code
+frontend/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ReadingList.jsx
+│   │   ├── ReadingListPage.jsx
+│   ├── App.js
+│   ├── index.js
+├── package.json
+├── ...
 
-## About Ello
+## Step 2: GraphQL Setup
+Set up Apollo Client:
+Define GraphQL Query:
 
-Ello is a forward-thinking educational technology company dedicated to revolutionizing the way children learn to read. Our mission is to empower young readers with the tools they need to become proficient and passionate readers. We believe that fostering a love for reading is essential for a child's academic and personal growth.
+## Component Structure
+The Ello Book Assignment application consists of the following components:
 
-**Note:** Please don't fork this repository or create a pull request against it. Other applicants may take inspiration from it. You should create another repository for the challenge. Once the coding challenge is completed, email your solution back to Jackie [jackie@ello.com](mailto:jackie@ello.com)
+1. App: The main component that serves as the entry point to the application. It handles routing and state management.
 
-.
+2. ReadingListPage: A component responsible for displaying the user's reading list. It receives the reading list as a prop and allows users to remove books from the list.
 
+3. ReadingList: This component represents an individual book in the reading list. It displays the book's title, author, and an option to remove it from the list.
 
-## Challenge
-As part of our goal to have Ello impact as many children as we can, we offer an Ello web viewer product. [https://books.ello.com](https://books.ello.com/)
+4. BookListContainer: This component contains the grid layout for displaying the list of books. It maps over the filtered books and renders the BookCard component for each book.
 
+5. BookCard: Represents an individual book card displayed in the book list. It contains the book's image, title, author, and an option to add the book to the reading list.
 
-We give this to certain schools for free to allow teachers to share our books with children. 
-You are building part of the teacher-facing UI for this product,
-namely the book assignment view, where teachers can assign books to students. 
+# Usage
+To use the Ello Book Assignment application, follow these steps:
 
-The view should have the following features:-
+Browse Books: Upon opening the application, you'll be presented with a collection of books. Scroll through the list to view available titles.
 
-1. A search bar that allows users to search for books by title.
-2. A list of search results that displays the book title, author, and a button to add the book to the students reading list.
-3. A reading list that displays all the books that the teacher has added.
-4. A button to remove a book from the reading list.
+Search Books: Utilize the search bar located at the top of the main page to search for specific books by title or author. Simply type your query into the search bar, and the list of books will be filtered accordingly.
 
-You can build this view without the concept of a "student" and just have a single reading list for the teacher.
+View Book Details: Click on any book card to view more details about the selected book, including its cover image, title, author, and other relevant information.
 
-### Requirements
-- Use React as the frontend framework.
-- Showcase the use of React hooks.
-- Use [material-ui](https://mui.com/material-ui/) as the component library.
-- Write your code in the `src/frontend` directory.
-- Create components as you feel is best suited for your solution
-<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="https://github.com/ElloTechnology/fullstack-take-home-test/assets/3518127/bc3eb7f7-489f-4304-93f4-032bbbd38c58">
+Add to Reading List: To add a book to your reading list, click the "Add to Reading List" button on the book card. The button will be disabled if the book is already in your reading list.
 
+View Reading List: Click on the "Reading List" button in the header to navigate to your reading list page. Here, you can view all the books you've added to your reading list and remove any books you no longer wish to include.
 
-### Data
-To get access to data that you will use for this challenge you can switch into the `src/backend` folder and run
-
-```bash
-npm install
-```
-
-Then run the following command to start the server
-
-```bash
-npm start
-```
-
-This start a Graphql server at the url `http://localhost:4000/`, the server has a single query `books` that returns a list of books. 
-
-```graphql
-query Books {
-  books {
-    author
-    coverPhotoURL
-    readingLevel
-    title
-  }
-}
-```
-
-You can use this query to get the list of books to display in your frontend. You may need to adjust the `coverPhotoURL` to be a valid URL. The photos are in the `src/frontend/assets` directory.
-
-### Styling Guidelines
-- Use the "Mulish" Google font
-- You can use the following colors (You don't have to use all but you can pick and choose from here)
-<img width="961" alt="Screenshot 2024-05-14 at 17 36 40" src="https://github.com/ElloTechnology/fullstack-take-home-test/assets/3518127/15922f8f-a7c7-4033-8405-76988e95afb3">
-
-
-
-
-### You will be evaluated on
-- Code quality and organization.
-- User experience and design.
-- Beautiful and responsive UI.
-
-
+Back to Home: While on the reading list page, you can return to the main page by clicking the "Back to Home" button in the header.

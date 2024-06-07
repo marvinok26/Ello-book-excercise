@@ -40,6 +40,8 @@ const App = () => {
   console.log('Search Value:', searchValue);
   console.log('Filtered Books:', filteredBooks);
 
+  const getOptionLabel = (option) => option ? option.title : '';
+
   return (
     <Container className="container">
       <Box className="header">
@@ -59,7 +61,7 @@ const App = () => {
             value={searchValue}
             onChange={handleSearchChange}
             options={filteredBooks}
-            getOptionLabel={(option) => option.title}
+            getOptionLabel={(option) => getOptionLabel(option)}
             renderOption={(props, option) => (
               <Grid container alignItems="center">
                 <Grid item>
