@@ -103,7 +103,6 @@ const App = () => {
               <Grid container spacing={4}>
                 {filteredBooks.map((book, index) => (
                   <Grid item key={index} xs={12} sm={6} md={4}>
-                    <Link to={`/books/${book.title}`} style={{ textDecoration: 'none' }}>
                     <Card className="book-card">
                       <CardMedia
                         component="img"
@@ -129,7 +128,6 @@ const App = () => {
                         </Button>
                       </CardContent>
                     </Card>
-                    </Link>
                   </Grid>
                 ))}
               </Grid>
