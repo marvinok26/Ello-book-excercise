@@ -1,0 +1,96 @@
+/* src/index.css */
+
+/* Define color variables */
+:root {
+  --color-turquoise: #5ACCCC;
+  --color-white: #FFFFFF;
+  --color-steel-blue: #335C6E;
+  --color-yellow: #FABD33;
+  --color-turquoise-light: #CFFAFA;
+  --color-orange-red: #F76434;
+  --color-teal: #4AA088;
+  --color-yellow-dark: #FAAD00;
+  --color-turquoise-dark-1: #53C2C2;
+  --color-turquoise-dark-2: #28B8B8;
+  --color-orange-pastel: #FFE6DC;
+}
+
+/* Base styles */
+body {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-turquoise-light);
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-list-container,
+.reading-list-container {
+  margin-top: 20px;
+}
+
+.book-card {
+  height: 350px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-steel-blue);
+  border-radius: 8px;
+}
+
+.book-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.book-card .MuiCardContent-root {
+  padding: 16px;
+}
+
+.book-card .MuiTypography-h6 {
+  font-size: 1.25rem;
+  color: var(--color-steel-blue);
+}
+
+.book-card .MuiTypography-body2 {
+  font-size: 0.875rem;
+  color: var(--color-steel-blue);
+  margin-bottom: 8px;
+}
+
+.book-card .MuiButton-containedPrimary {
+  background-color: var(--color-turquoise);
+  color: var(--color-white);
+}
+
+.book-card .MuiButton-containedSecondary {
+  background-color: var(--color-orange-red);
+  color: var(--color-white);
+}
+
+/* src/components/SearchBar.css */
+
+.search-bar {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 999;
+  top: 50px;
+  left: 0;
+  width: 100%;
+}

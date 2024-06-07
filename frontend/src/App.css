@@ -1,0 +1,23 @@
+/* styles.css */
+
+/* Centering styles */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Pagination buttons */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
